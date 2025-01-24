@@ -15,7 +15,7 @@ import com.employee.services.EmployeeService;
 public class EmployeeController 
 {
     @Autowired
-	private EmployeeService employeeService;
+    private EmployeeService employeeService;
 	
     @RequestMapping("/addEmployee") 
     public String viewInsertEmployeePage() 
@@ -26,7 +26,7 @@ public class EmployeeController
     @RequestMapping("/saveEmployee")
     public String saveOneLead(@ModelAttribute("employee") Employee employee, ModelMap model) 
     {
-    	employeeService.saveEmployee(employee);
+    	    employeeService.saveEmployee(employee);
 	    model.addAttribute("msg", "Employee Saved Successfully");
 	    return "Employee_Form";
     }
@@ -42,7 +42,7 @@ public class EmployeeController
     @RequestMapping("/delete")
     public String deleteOneEmployee(@RequestParam ("id") long id, ModelMap model) 
     {
-    	employeeService.deleteEmployee(id);
+    	    employeeService.deleteEmployee(id);
 	    List<Employee> Employees = employeeService.getAllEmployees();
 	    model.addAttribute("emp", Employees);
 	    return "Employee_list"; 
@@ -59,7 +59,7 @@ public class EmployeeController
     
     
     @RequestMapping("/updateEmployee")
-	public String updateOneEmployeeData(@ModelAttribute("employee") Employee employee, ModelMap model) 
+    public String updateOneEmployeeData(@ModelAttribute("employee") Employee employee, ModelMap model) 
     {   	
         employee.setFirstName(employee.getFirstName());
         employee.setLastName(employee.getLastName());
@@ -71,7 +71,7 @@ public class EmployeeController
         employee.setJobTitle(employee.getJobTitle());
         employee.setJoiningDate(employee.getJoiningDate());
 	    
-	    employeeService.saveEmployee(employee);
+	        employeeService.saveEmployee(employee);
 		List<Employee> employees = employeeService.getAllEmployees();
 		model.addAttribute("emp", employees);
 		return "Employee_list";
