@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService
 
 	   public void saveEmployee(Employee employee)
 	   {
-			employeeRepository.save(employee);
+		   employeeRepository.save(employee);
 	   }
 	   
 	   public List<Employee> getAllEmployees()
@@ -30,9 +30,12 @@ public class EmployeeServiceImpl implements EmployeeService
 	   public Employee getOneEmployeeById(long id)
 	   {
 		   Optional<Employee> findbyid = employeeRepository.findById(id);
-		    if (findbyid.isPresent()) {
+		    if (findbyid.isPresent()) 
+		    {
 		        return findbyid.get();
-		    } else {
+		    } 
+		    else 
+		    {
 		        throw new RuntimeException("Employee not found with ID: " + id);
 		    }
 	   }
