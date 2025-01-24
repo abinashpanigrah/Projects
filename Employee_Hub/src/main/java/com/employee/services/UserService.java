@@ -6,5 +6,5 @@ public interface UserService
 {
 	public User validateUser(String username, String password);
    
-    public void saveUser(User user);
+        public void saveUser(User user);
 }
