@@ -14,13 +14,14 @@ public class UserServiceImpl implements UserService
 	private UserRepository userRepository;
 	
 	@Override
-    public void saveUser(User user) {
-        userRepository.save(user);
-    }
+        public void saveUser(User user) 
+	{
+           userRepository.save(user);
+        }
 
-    @Override
-    public User validateUser(String username, String password) {
-        return userRepository.findByUsernameAndPassword(username, password);
-    }
-	
+        @Override
+        public User validateUser(String username, String password) 
+	{
+           return userRepository.findByUsernameAndPassword(username, password);
+        }	
 }
